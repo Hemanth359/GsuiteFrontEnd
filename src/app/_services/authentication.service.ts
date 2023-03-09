@@ -21,7 +21,7 @@ export class AuthenticationService {
 	}
 
 	login(username: string, password: string) {
-		return this.http.post<any>(`http://localhost:3000/users/loginMe`, { username, password })
+		return this.http.post<any>(`http://3.134.95.50:3000/users/loginMe`, { username, password })
 			.pipe(map(user => {
 console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 console.log(user)
@@ -37,7 +37,7 @@ console.log(user)
 	}
 
 	googleUserLogin( idToken: string,client_id) {
-		return this.http.post<any>(`http://localhost:3000/users/googleUserLogin`, { idToken ,client_id})
+		return this.http.post<any>(`http://3.134.95.50:3000/users/googleUserLogin`, { idToken ,client_id})
 			.pipe(map(user => {
 
 				// login successful if there's a jwt token in the response
